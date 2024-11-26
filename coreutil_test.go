@@ -3,8 +3,9 @@ package coreutil_test
 import (
 	"testing"
 
+	"github.com/stretchr/testify/require"
+
 	"github.com/m0t0k1ch1-go/coreutil"
-	"github.com/m0t0k1ch1-go/coreutil/internal/testutil"
 )
 
 func TestPtr(t *testing.T) {
@@ -25,7 +26,7 @@ func TestPtr(t *testing.T) {
 
 		for _, tc := range tcs {
 			t.Run(tc.name, func(t *testing.T) {
-				testutil.Equal(t, &tc.in, coreutil.Ptr(tc.in))
+				require.Equal(t, &tc.in, coreutil.Ptr(tc.in))
 			})
 		}
 	})
